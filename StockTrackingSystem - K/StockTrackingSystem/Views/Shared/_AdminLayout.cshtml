@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>_AdminLayout</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/Product/Index">HOME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link  me-2" href="/Product/Index">Products</a>
+                    <a class="nav-link  me-2" href="/Customer/Index">Customers</a>
+                    <a class="nav-link  me-2" href="/Category/Index">Categories</a>
+                    <a class="nav-link  me-2" href="/Orders/Index">Orders</a>
+                    <a class="nav-link  me-2" href="/Admin/Index">Admin Settings</a>
+                   
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+  
+</body>
+</html>

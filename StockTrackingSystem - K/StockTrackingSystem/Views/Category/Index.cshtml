@@ -1,0 +1,28 @@
+﻿@using StockTrackingSystem.Models.Entity;
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>CATEGORIES</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td><a href="/Category/KCategoryDelete/@item.ID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Category/UCategoryGetir/@item.ID" class="btn btn-success">UPDATE</a></td>
+
+        </tr>
+    }
+</table>
+ 
+<td><a href="/Category/CategoryAdd/" class="btn btn-primary">NEW CATEGORY</a></td>

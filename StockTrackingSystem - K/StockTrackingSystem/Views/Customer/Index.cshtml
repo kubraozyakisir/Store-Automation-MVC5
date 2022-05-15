@@ -1,0 +1,42 @@
+﻿@using StockTrackingSystem.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CUSTOMERS</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>City</th>
+        <th>Balance</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.City</td>
+            <td>@item.Balance</td>
+            <td><a href="/Customer/CustomerDelete/@item.Id" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Customer/CustomerGetir/@item.Id" class="btn btn-success">UPDATE</a></td>
+        </tr>
+    }
+
+</table>   
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page } ),new PagedListRenderOptions
+{
+    LiElementClasses = new List<String> { "page-link" }
+})
+<br />
+<a href="/Customer/CustomerAdd" class="btn btn-primary">Add A New Customer</a>

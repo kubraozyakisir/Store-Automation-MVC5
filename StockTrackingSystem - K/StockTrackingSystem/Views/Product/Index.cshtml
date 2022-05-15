@@ -1,0 +1,48 @@
+﻿@using StockTrackingSystem.Models.Entity;
+@model List<Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>PRODUCTS</h2>
+<br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{ 
+    <p>
+        Product Name:@Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+ 
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Stock</th>
+        <th>Purchase Price </th>
+        <th>SalePrice </th>
+        <th>Category</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+         
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Brand</td>
+            <td>@item.Stock</td>
+            <td>@item.PurchasePrice</td>
+            <td>@item.SalePrice</td>
+            <td>@item.Category.Name</td>
+            <td><a href="/Product/RDelete/@item.ID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Product/UProductGetir/@item.ID" class="btn btn-success">UPDATE</a></td>
+        </tr>
+    }
+</table>
+
+<td><a href="/Product/KProductAdd/" class="btn btn-primary">NEW PRODUCT</a></td>

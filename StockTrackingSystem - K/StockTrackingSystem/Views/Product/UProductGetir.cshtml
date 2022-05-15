@@ -1,0 +1,28 @@
+﻿@model StockTrackingSystem.Models.Entity.Product
+@{
+    ViewBag.Title = "UProductGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("BProductUpdate", "Product", FormMethod.Post))
+{
+    <h2>Update Product</h2>
+    <br />
+    <br />
+    @Html.HiddenFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+    <br />
+    @Html.DropDownListFor(x => x.Category.ID, (List<SelectListItem>)ViewBag.kategori, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+
+}

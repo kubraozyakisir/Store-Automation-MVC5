@@ -1,0 +1,16 @@
+﻿@model StockTrackingSystem.Models.Entity.Category
+
+@{
+    ViewBag.Title = "CategoryAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add A New Category</h2>
+<br />
+<form method="post">
+    <label>Enter a category name : </label>
+    <input type="text"  class="form-control" name="Name"/>
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+

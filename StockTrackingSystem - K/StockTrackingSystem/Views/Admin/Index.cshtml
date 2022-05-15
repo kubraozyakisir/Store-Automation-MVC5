@@ -1,0 +1,26 @@
+﻿@using StockTrackingSystem.Models.Entity;
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>ADMIN PANEL</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>UserName</th>
+        <th>Password</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+           
+
+        </tr>
+    }
+</table>
+ 
+<td><a href="/Admin/AddAdmin/" class="btn btn-primary">NEW ADMIN</a></td>

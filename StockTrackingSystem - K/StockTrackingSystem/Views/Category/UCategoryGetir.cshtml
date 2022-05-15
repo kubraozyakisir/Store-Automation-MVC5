@@ -1,0 +1,17 @@
+﻿@model StockTrackingSystem.Models.Entity.Category
+@{
+    ViewBag.Title = "UCategoryGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+ 
+@using (Html.BeginForm("BCategoryUpdate", "Category", FormMethod.Post))
+{
+    <h2>Update Category</h2>
+    <br />
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+
+}
